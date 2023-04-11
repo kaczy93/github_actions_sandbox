@@ -50,3 +50,4 @@ jobs:
         body: This is dev release, use at your own risk
         name: GithubActionsSandbox 
         prerelease: true
+        tag: latest-dev
