@@ -41,7 +41,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: GithubActionsSandbox-${{matrix.os}}
-        path: ${{ github.workspace }}/github_actions_sandbox/github_actions_sandbox/release//GithubActionsSandbox*
+        path: ${{ github.workspace }}/release//GithubActionsSandbox*
     - name: Create Release
       uses: ncipollo/release-action@v1.12.0
       with:
