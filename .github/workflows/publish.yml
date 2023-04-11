@@ -51,3 +51,4 @@ jobs:
         name: GithubActionsSandbox 
         prerelease: true
         tag: latest-dev
+        token: ${{ secrets.GH_TOKEN }}
