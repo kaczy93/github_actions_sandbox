@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-       arch: [ win-x64, linux-x64, osx-x64 ]
+       runtime : [ win-x64, linux-x64, osx-x64 ]
 
     steps:
     - uses: actions/checkout@v3
@@ -32,9 +32,9 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Publish
-      run: dotnet publish -c Release -o release -p:PublishSingleFile=true --self-contained false --arch ${{matrix.arch}}
+      run: dotnet publish -c Release -o release -p:PublishSingleFile=true --self-contained false --runtime  ${{matrix.runtime }}
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: GithubActionsSandbox-${{matrix.arch}}
+        name: GithubActionsSandbox-${{matrix.runtime }}
         path: ${{ github.workspace }}/release//GithubActionsSandbox*
