@@ -42,3 +42,11 @@ jobs:
       with:
         name: GithubActionsSandbox-${{matrix.os}}
         path: ${{ github.workspace }}/github_actions_sandbox/github_actions_sandbox/release//GithubActionsSandbox*
+    - name: Create Release
+      uses: ncipollo/release-action@v1.12.0
+      with:
+        allowUpdates: true
+        artifacts: GithubActionsSandbox-${{matrix.os}}
+        body: This is dev release, use at your own risk
+        name: GithubActionsSandbox 
+        prerelease: true
