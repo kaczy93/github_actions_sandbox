@@ -20,11 +20,11 @@ env:
 
 jobs:
   build:
-    runs-on: ${{matrix.os}}
+    runs-on: ${{matrix.runner}}
     strategy:
       matrix:
-       runtime : [ windows-latest, ubuntu-latest, macos-latest ]
-    environment: ${{matrix.os}}
+       runner : [ windows-latest, ubuntu-latest, macos-latest ]
+    environment: ${{matrix.runner}}
 
     steps:
     - uses: actions/checkout@v3
