@@ -35,7 +35,7 @@ jobs:
     - name: Publish
       run: dotnet publish -c Release -o release -p:PublishSingleFile=true --self-contained false "-p:AssemblyName=GithubActionsSandbox-${{vars.runtime}}"
     - name: Upload Build Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: GithubActionsSandbox-${{vars.runtime}}${{vars.exe_ext}}
-        path: ${{ github.workspace }}/release//GithubActionsSandbox${{vars.exe_ext}}
+        path: ${{ github.workspace }}/release/GithubActionsSandbox${{vars.exe_ext}}
