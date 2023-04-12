@@ -37,5 +37,5 @@ jobs:
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: GithubActionsSandbox-${{vars.runtime}}*
+        name: GithubActionsSandbox-${{vars.runtime}}
         path: ${{ github.workspace }}/release/GithubActionsSandbox-${{vars.runtime}}*
