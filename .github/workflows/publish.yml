@@ -38,4 +38,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: GithubActionsSandbox-${{vars.runtime}}${{vars.exe_ext}}
-        path: ${{ github.workspace }}/release/GithubActionsSandbox${{vars.exe_ext}}
+        path: ${{ github.workspace }}/release/GithubActionsSandbox-${{vars.runtime}}${{vars.exe_ext}}
