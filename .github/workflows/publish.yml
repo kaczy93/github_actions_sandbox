@@ -24,6 +24,7 @@ jobs:
     strategy:
       matrix:
        runtime : [ win-x64, linux-x64, osx-x64 ]
+    environment: ${{matrix.os}}
 
     steps:
     - uses: actions/checkout@v3
@@ -32,9 +33,9 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Publish
-      run: dotnet publish -c Release -o release -p:PublishSingleFile=true --self-contained false --runtime  ${{matrix.runtime }}
+      run: dotnet publish -c Release -o release -p:PublishSingleFile=true --self-contained false --runtime "-p:AssemblyName=GithubActionsSandbox-${{vars.runtime}}"
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: GithubActionsSandbox-${{matrix.runtime }}
+        name: GithubActionsSandbox-${{vars.runtime}}
         path: ${{ github.workspace }}/release//GithubActionsSandbox*
