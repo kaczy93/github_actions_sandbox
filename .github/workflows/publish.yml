@@ -33,7 +33,7 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Publish
-      run: dotnet publish -c Release -o release -p:PublishSingleFile=true --self-contained false --runtime "-p:AssemblyName=GithubActionsSandbox-${{vars.runtime}}"
+      run: dotnet publish -c Release -o release -p:PublishSingleFile=true --self-contained false "-p:AssemblyName=GithubActionsSandbox-${{vars.runtime}}"
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v2
       with:
