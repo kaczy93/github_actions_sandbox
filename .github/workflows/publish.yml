@@ -20,10 +20,10 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
     strategy:
       matrix:
-       runtime : [ win-x64, linux-x64, osx-x64 ]
+       runtime : [ windows-latest, ubuntu-latest, macos-latest ]
     environment: ${{matrix.os}}
 
     steps:
